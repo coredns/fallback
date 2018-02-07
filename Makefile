@@ -1,9 +1,24 @@
 VERSION:=0.1
 TAG:=v$(VERSION)
 
-all:
-	@echo Use the 'release' target to start a release $(VERSION)
+COVEROUT = cover.out
+GOFMTCHECK = test -z `gofmt -l -s -w *.go | tee /dev/stderr`
+GOTEST = go test -v
+COVER = $(GOTEST) -coverprofile=$(COVEROUT) -covermode=atomic -race
 
+all: fmt test
+
+.PHONY: fmt
+fmt:
+	@echo "Checking format..."
+	@$(GOFMTCHECK)
+
+.PHONY: test
+test:
+	@echo "Running tests..."
+	@$(COVER)
+
+# Use the 'release' target to start a release
 .PHONY: release
 release: commit push
 	@echo Released $(VERSION)
