@@ -249,7 +249,7 @@ func TestFallbackCalledMany(t *testing.T) {
 	_, _ = handler.ServeDNS(ctx, rec, req)
 
 	// The proxyCreator should be called twice
-	if proxyCreator.called != 2 {
+	if proxyCreator.called != 1 {
 		t.Errorf("Expect proxy creator to be called twice, but got '%d'", proxyCreator.called)
 	}
 }
