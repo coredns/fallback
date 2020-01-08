@@ -9,7 +9,7 @@ import (
 	"github.com/coredns/coredns/plugin"
 	"github.com/coredns/coredns/plugin/pkg/dnstest"
 	"github.com/coredns/coredns/plugin/pkg/healthcheck"
-	"github.com/coredns/coredns/plugin/proxy"
+	"github.com/coredns/proxy"
 	"github.com/coredns/coredns/plugin/test"
 	"github.com/coredns/coredns/request"
 
