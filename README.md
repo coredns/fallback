@@ -1,5 +1,9 @@
 # fallback
 
+## Deprecated
+
+This plugin is deprecated in favor of https://github.com/coredns/alternate, which performs the same function.
+
 ## Name
 
 *fallback* - a plugin that sends queries to an alternate set of upstreams if the plugin
